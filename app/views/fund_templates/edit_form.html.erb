@@ -1,0 +1,66 @@
+<h1>
+  Edit fund #<%= @fund.id %>
+</h1>
+
+<hr>
+
+<form action="/update_fund/<%= @fund.id %>" method="post">
+
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <input type="text" id="name" name="name" class="form-control" value="<%= @fund.name %>">
+  </div>
+
+  <div class="form-group">
+    <label for="duration">
+      Duration
+    </label>
+
+    <input type="text" id="duration" name="duration" class="form-control" value="<%= @fund.duration %>">
+  </div>
+
+  <div class="form-group">
+    <label for="field">
+      Field
+    </label>
+
+    <input type="text" id="field" name="field" class="form-control" value="<%= @fund.field %>">
+  </div>
+
+  <div class="form-group">
+    <label for="stage">
+      Stage
+    </label>
+
+    <input type="text" id="stage" name="stage" class="form-control" value="<%= @fund.stage %>">
+  </div>
+
+  <div class="form-group">
+    <label for="manager_id">
+      Manager
+    </label>
+
+    <input type="text" id="manager_id" name="manager_id" class="form-control" value="<%= @fund.manager_id %>">
+  </div>
+
+  <div class="form-group">
+    <label for="fof_id">
+      Fof
+    </label>
+
+    <input type="text" id="fof_id" name="fof_id" class="form-control" value="<%= @fund.fof_id %>">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update fund
+  </button>
+</form>
+
+<hr>
+
+<a href="/funds">
+  Go back
+</a>

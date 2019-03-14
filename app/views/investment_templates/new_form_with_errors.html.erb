@@ -1,0 +1,62 @@
+<!-- Validation failure messages -->
+<% if @investment.present? %>
+  <% if @investment.errors.any? %>
+    <% @investment.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new investment
+</h1>
+
+
+<hr>
+
+<form action="/create_investment" method="post">
+
+  <div class="form-group">
+    <label for="fund_id">
+      Fund
+    </label>
+
+    <input type="text" id="fund_id" name="fund_id" class="form-control" value="<%= @investment.fund_id %>">
+  </div>
+
+  <div class="form-group">
+    <label for="project_id">
+      Project
+    </label>
+
+    <input type="text" id="project_id" name="project_id" class="form-control" value="<%= @investment.project_id %>">
+  </div>
+
+  <div class="form-group">
+    <label for="amount">
+      Amount
+    </label>
+
+    <input type="text" id="amount" name="amount" class="form-control" value="<%= @investment.amount %>">
+  </div>
+
+  <div class="form-group">
+    <label for="round">
+      Round
+    </label>
+
+    <input type="text" id="round" name="round" class="form-control" value="<%= @investment.round %>">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create investment
+  </button>
+</form>
+
+<hr>
+
+<a href="/investments">
+  Go back
+</a>

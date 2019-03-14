@@ -1,0 +1,42 @@
+<h1>
+  Edit entrepreneur #<%= @entrepreneur.id %>
+</h1>
+
+<hr>
+
+<form action="/update_entrepreneur/<%= @entrepreneur.id %>" method="post">
+
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <input type="text" id="name" name="name" class="form-control" value="<%= @entrepreneur.name %>">
+  </div>
+
+  <div class="form-group">
+    <label for="bio">
+      Bio
+    </label>
+
+    <textarea id="bio" name="bio" class="form-control" rows="3"><%= @entrepreneur.bio %></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="dob">
+      Dob
+    </label>
+
+    <input type="text" id="dob" name="dob" class="form-control" value="<%= @entrepreneur.dob %>">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update entrepreneur
+  </button>
+</form>
+
+<hr>
+
+<a href="/entrepreneurs">
+  Go back
+</a>

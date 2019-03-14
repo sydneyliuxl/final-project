@@ -1,0 +1,72 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Option #<%= @option.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/options" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/options/<%= @option.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit option
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_option/<%= @option.id %>" class="btn btn-block btn-outline-secondary">
+          Delete option
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Fof
+      </dt>
+      <dd>
+        <%= @option.fof_id %>
+      </dd>
+
+      <dt>
+        Fund
+      </dt>
+      <dd>
+        <%= @option.fund_id %>
+      </dd>
+
+      <dt>
+        Amount
+      </dt>
+      <dd>
+        <%= @option.amount %>
+      </dd>
+
+      <dt>
+        Timing
+      </dt>
+      <dd>
+        <%= @option.timing %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@option.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@option.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+

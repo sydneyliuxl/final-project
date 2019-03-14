@@ -1,0 +1,90 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All options
+    </h1>
+
+    <a href="/options/new" class="btn btn-block btn-outline-secondary">
+      Add a new option
+    </a>
+  </div>
+</div>
+
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Fof
+        </th>
+
+        <th>
+          Fund
+        </th>
+
+        <th>
+          Amount
+        </th>
+
+        <th>
+          Timing
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @options.each do |option| %>
+      <tr>
+        <td>
+          <%= option.id %>
+        </td>
+
+        <td>
+          <%= option.fof_id %>
+        </td>
+
+        <td>
+          <%= option.fund_id %>
+        </td>
+
+        <td>
+          <%= option.amount %>
+        </td>
+
+        <td>
+          <%= option.timing %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(option.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(option.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/options/<%= option.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

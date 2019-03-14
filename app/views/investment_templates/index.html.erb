@@ -1,0 +1,90 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All investments
+    </h1>
+
+    <a href="/investments/new" class="btn btn-block btn-outline-secondary">
+      Add a new investment
+    </a>
+  </div>
+</div>
+
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Fund
+        </th>
+
+        <th>
+          Project
+        </th>
+
+        <th>
+          Amount
+        </th>
+
+        <th>
+          Round
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @investments.each do |investment| %>
+      <tr>
+        <td>
+          <%= investment.id %>
+        </td>
+
+        <td>
+          <%= investment.fund_id %>
+        </td>
+
+        <td>
+          <%= investment.project_id %>
+        </td>
+
+        <td>
+          <%= investment.amount %>
+        </td>
+
+        <td>
+          <%= investment.round %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(investment.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(investment.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/investments/<%= investment.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

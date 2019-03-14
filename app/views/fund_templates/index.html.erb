@@ -1,0 +1,102 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All funds
+    </h1>
+
+    <a href="/funds/new" class="btn btn-block btn-outline-secondary">
+      Add a new fund
+    </a>
+  </div>
+</div>
+
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Name
+        </th>
+
+        <th>
+          Duration
+        </th>
+
+        <th>
+          Field
+        </th>
+
+        <th>
+          Stage
+        </th>
+
+        <th>
+          Manager
+        </th>
+
+
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+        
+      </tr>
+
+      <% @funds.each do |fund| %>
+      <tr>
+        <td>
+          <%= fund.id %>
+        </td>
+
+        <td>
+          <%= fund.name %>
+        </td>
+
+        <td>
+          <%= fund.duration %>
+        </td>
+
+        <td>
+          <%= fund.field %>
+        </td>
+
+        <td>
+          <%= fund.stage %>
+        </td>
+
+        <td>
+          <%= fund.manager_id %>
+        </td>
+
+
+        <td>
+          <%= time_ago_in_words(fund.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(fund.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/funds/<%= fund.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

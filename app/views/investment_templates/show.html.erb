@@ -1,0 +1,72 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Investment #<%= @investment.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/investments" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/investments/<%= @investment.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit investment
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_investment/<%= @investment.id %>" class="btn btn-block btn-outline-secondary">
+          Delete investment
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Fund
+      </dt>
+      <dd>
+        <%= @investment.fund_id %>
+      </dd>
+
+      <dt>
+        Project
+      </dt>
+      <dd>
+        <%= @investment.project_id %>
+      </dd>
+
+      <dt>
+        Amount
+      </dt>
+      <dd>
+        <%= @investment.amount %>
+      </dd>
+
+      <dt>
+        Round
+      </dt>
+      <dd>
+        <%= @investment.round %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@investment.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@investment.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+

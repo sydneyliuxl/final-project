@@ -1,0 +1,58 @@
+<% if @fof.errors.any? %>
+  <% @fof.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit fof #<%= @fof.id %>
+</h1>
+
+<hr>
+
+<form action="/update_fof/<%= @fof.id %>" method="post">
+
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <input type="text" id="name" name="name" class="form-control" value="<%= @fof.name %>">
+  </div>
+
+  <div class="form-group">
+    <label for="scale">
+      Scale
+    </label>
+
+    <input type="text" id="scale" name="scale" class="form-control" value="<%= @fof.scale %>">
+  </div>
+
+  <div class="form-group">
+    <label for="expiration">
+      Expiration
+    </label>
+
+    <input type="text" id="expiration" name="expiration" class="form-control" value="<%= @fof.expiration %>">
+  </div>
+
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @fof.user_id %>">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update fof
+  </button>
+</form>
+
+<hr>
+
+<a href="/fofs">
+  Go back
+</a>

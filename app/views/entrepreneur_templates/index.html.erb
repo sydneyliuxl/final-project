@@ -1,0 +1,82 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All entrepreneurs
+    </h1>
+
+    <a href="/entrepreneurs/new" class="btn btn-block btn-outline-secondary">
+      Add a new entrepreneur
+    </a>
+  </div>
+</div>
+
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Name
+        </th>
+
+        <th>
+          Bio
+        </th>
+
+        <th>
+          Image
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @entrepreneurs.each do |entrepreneur| %>
+      <tr>
+        <td>
+          <%= entrepreneur.id %>
+        </td>
+
+        <td>
+          <%= entrepreneur.name %>
+        </td>
+
+        <td>
+          <%= entrepreneur.bio %>
+        </td>
+
+        <td>
+          <%= entrepreneur.dob %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(entrepreneur.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(entrepreneur.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/entrepreneurs/<%= entrepreneur.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,91 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All fofs
+    </h1>
+
+    <a href="/fofs/new" class="btn btn-block btn-outline-secondary">
+      Add a new fof
+    </a>
+  </div>
+</div>
+
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Name
+        </th>
+
+        <th>
+          Scale
+        </th>
+
+        <th>
+          Expiration
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+        
+      </tr>
+
+      <% @fofs.each do |fof| %>
+      <tr>
+        <td>
+          <%= fof.id %>
+        </td>
+
+        <td>
+          <%= fof.name %>
+        </td>
+
+        <td>
+          <%= fof.scale %>
+        </td>
+
+        <td>
+          <%= fof.expiration %>
+        </td>
+
+        <td>
+          <%= fof.user_id %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(fof.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(fof.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/fofs/<%= fof.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<h1>
+  Edit investor #<%= @investor.id %>
+</h1>
+
+<hr>
+
+<form action="/update_investor/<%= @investor.id %>" method="post">
+
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <input type="text" id="name" name="name" class="form-control" value="<%= @investor.name %>">
+  </div>
+
+  <div class="form-group">
+    <label for="dob">
+      Dob
+    </label>
+
+    <input type="text" id="dob" name="dob" class="form-control" value="<%= @investor.dob %>">
+  </div>
+
+  <div class="form-group">
+    <label for="image">
+      Image
+    </label>
+
+    <input type="text" id="image" name="image" class="form-control" value="<%= @investor.image %>">
+  </div>
+
+  <div class="form-group">
+    <label for="bio">
+      Bio
+    </label>
+
+    <textarea id="bio" name="bio" class="form-control" rows="3"><%= @investor.bio %></textarea>
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update investor
+  </button>
+</form>
+
+<hr>
+
+<a href="/investors">
+  Go back
+</a>

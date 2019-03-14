@@ -1,0 +1,43 @@
+<h1>
+  Add a new entrepreneur
+</h1>
+
+
+<hr>
+
+<form action="/create_entrepreneur" method="post">
+
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <input type="text" id="name" name="name" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="bio">
+      Bio
+    </label>
+
+    <textarea id="bio" name="bio" class="form-control" rows="3"></textarea>
+  </div>
+
+  
+    <div class="form-group">
+    <label for="dob">
+      Dob
+    </label>
+
+    <input type="text" id="dob" name="dob" class="form-control" >
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create entrepreneur
+  </button>
+</form>
+
+<hr>
+
+<a href="/entrepreneurs">
+  Go back
+</a>
