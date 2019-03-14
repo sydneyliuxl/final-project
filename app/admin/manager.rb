@@ -1,4 +1,4 @@
-ActiveAdmin.register Investor do
+ActiveAdmin.register Manager do
   permit_params :name, :dob, :image, :bio
 
 # See permitted parameters documentation:

@@ -9,6 +9,10 @@ class CreateFunds < ActiveRecord::Migration[5.1]
       t.integer :fof_id
 
       t.timestamps
+      
+      
+
+      
     end
   end
 end

@@ -29,14 +29,20 @@
         Fof
       </dt>
       <dd>
-        <%= @option.fof_id %>
+         <a href="/fofs/<%= @option.fof_id %>">
+          <%= @option.fof.name %>
+         </a> 
+      
       </dd>
 
       <dt>
         Fund
       </dt>
       <dd>
-        <%= @option.fund_id %>
+         <a href="/funds/<%= @option.fund_id %>">
+           <%= @option.fund.name %>
+         </a>         
+
       </dd>
 
       <dt>

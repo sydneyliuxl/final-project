@@ -97,22 +97,22 @@ Rails.application.routes.draw do
 
   #------------------------------
 
-  # Routes for the Investor resource:
+  # Routes for the Manager resource:
 
   # CREATE
-  get("/investors/new", { :controller => "investors", :action => "new_form" })
-  post("/create_investor", { :controller => "investors", :action => "create_row" })
+  get("/managers/new", { :controller => "managers", :action => "new_form" })
+  post("/create_manager", { :controller => "managers", :action => "create_row" })
 
   # READ
-  get("/investors", { :controller => "investors", :action => "index" })
-  get("/investors/:id_to_display", { :controller => "investors", :action => "show" })
+  get("/managers", { :controller => "managers", :action => "index" })
+  get("/managers/:id_to_display", { :controller => "managers", :action => "show" })
 
   # UPDATE
-  get("/investors/:prefill_with_id/edit", { :controller => "investors", :action => "edit_form" })
-  post("/update_investor/:id_to_modify", { :controller => "investors", :action => "update_row" })
+  get("/managers/:prefill_with_id/edit", { :controller => "managers", :action => "edit_form" })
+  post("/update_manager/:id_to_modify", { :controller => "managers", :action => "update_row" })
 
   # DELETE
-  get("/delete_investor/:id_to_remove", { :controller => "investors", :action => "destroy_row" })
+  get("/delete_manager/:id_to_remove", { :controller => "managers", :action => "destroy_row" })
 
   #------------------------------
 
@@ -138,4 +138,9 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  
+
+ 
+  
+  
 end

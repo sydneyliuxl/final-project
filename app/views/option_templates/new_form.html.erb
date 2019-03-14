@@ -11,16 +11,19 @@
     <label for="fof_id">
       Fof
     </label>
-
-    <input type="text" id="fof_id" name="fof_id" class="form-control">
+    
+    <%= select_tag("fof_id", options_from_collection_for_select(Fof.all, :id, :name, @option.try(:fof_id)), :class => "form-control") %>
+    or <a href="/fofs/new">add a new fof</a> first 
+    
   </div>
 
   <div class="form-group">
     <label for="fund_id">
       Fund
     </label>
-
-    <input type="text" id="fund_id" name="fund_id" class="form-control">
+    <%= select_tag("fund_id", options_from_collection_for_select(Fund.all, :id, :name, @option.try(:fund_id)), :class => "form-control") %>
+    or <a href="/funds/new">add a new fund</a> first 
+    
   </div>
 
   <div class="form-group">

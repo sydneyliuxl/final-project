@@ -23,6 +23,7 @@ class EntrepreneursController < ApplicationController
     @entrepreneur.name = params.fetch("name")
     @entrepreneur.bio = params.fetch("bio")
     @entrepreneur.dob = params.fetch("dob")
+    @entrepreneur.image = params.fetch("image")   
 
     if @entrepreneur.valid?
       @entrepreneur.save
@@ -45,6 +46,7 @@ class EntrepreneursController < ApplicationController
     @entrepreneur.name = params.fetch("name")
     @entrepreneur.bio = params.fetch("bio")
     @entrepreneur.dob = params.fetch("dob")
+    @entrepreneur.image = params.fetch("image")   
 
     if @entrepreneur.valid?
       @entrepreneur.save

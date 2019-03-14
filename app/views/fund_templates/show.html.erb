@@ -57,25 +57,84 @@
         Manager
       </dt>
       <dd>
-        <%= @fund.manager_id %>
+         <a href="/managers/<%= @fund.manager_id %>">
+          <%= @fund.manager.name %>
+         </a>  
       </dd>
 
+  <dt>
+  Number of investments
+  </dt>
+  <dd>
+    <%= Investment.where(fund_id: @fund.id).count %>
+  </dd>
+  
+  
 
-
-      <dt>
-        Created at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@fund.created_at) %> ago
-      </dd>
-
-      <dt>
-        Updated at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@fund.updated_at) %> ago
-      </dd>
     </dl>
   </div>
 </div>
 
+
+
+
+<div class="card mt-4">
+  <div class="card-header">
+    Portfolio
+  </div>
+  <ul class="list-group list-group-flush">
+   <% Investment.where(fund_id: @fund.id).each do |investment| %>
+    <li class="list-group-item">
+      <a href="/investments/<%= investment.id %>">
+        <%= Project.find(investment.project_id).name %>
+      </a>
+       (Round <%= investment.round %>)
+      </li>
+   <% end %>
+  </ul>
+  
+  <div class="card-header">
+   Add a new investment for this fund
+  </div>
+
+<ul class="list-group">
+  <li class="list-group-item">
+      
+<form action="/create_investment" method="post">
+
+ <!-- Label and input for fund id -->
+  <input type="hidden" name="fund_id" value="<%= @fund.id %>">
+
+  <div class="form-group">
+    <label for="project_id">
+      Project
+    </label>
+
+    <%= select_tag("project_id", options_from_collection_for_select(Project.all, :id, :name, @investment.try(:project_id)), :class => "form-control") %>
+    or <a href="/projects/new">add a new project</a> first  
+  </div>
+
+  <div class="form-group">
+    <label for="amount">
+      Amount
+    </label>
+
+    <input type="text" id="amount" name="amount" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="round">
+      Round
+    </label>
+
+    <input type="text" id="round" name="round" class="form-control">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create investment
+  </button>
+  
+</form>
+
+  </li>
+</ul>

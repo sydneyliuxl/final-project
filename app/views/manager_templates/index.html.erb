@@ -1,11 +1,11 @@
 <div class="row mb-3">
   <div class="col-md-12">
     <h1>
-      All investors
+      All managers
     </h1>
 
-    <a href="/investors/new" class="btn btn-block btn-outline-secondary">
-      Add a new investor
+    <a href="/managers/new" class="btn btn-block btn-outline-secondary">
+      Add a new manager
     </a>
   </div>
 </div>
@@ -49,37 +49,37 @@
         </th>
       </tr>
 
-      <% @investors.each do |investor| %>
+      <% @managers.each do |manager| %>
       <tr>
         <td>
-          <%= investor.id %>
+          <%= manager.id %>
         </td>
 
         <td>
-          <%= investor.name %>
+          <%= manager.name %>
         </td>
 
         <td>
-          <%= investor.dob %>
+          <%= manager.dob %>
         </td>
 
         <td>
-          <img src="<%= investor.image %>" width="80">
+          <img src="<%= manager.image %>" width="80">
         </td>
 
         <td>
-          <%= investor.bio %>
+          <%= manager.bio %>
         </td>
 
         <td>
-          <%= time_ago_in_words(investor.created_at) %> ago
+          <%= time_ago_in_words(manager.created_at) %> ago
         </td>
         <td>
-          <%= time_ago_in_words(investor.updated_at) %> ago
+          <%= time_ago_in_words(manager.updated_at) %> ago
         </td>
 
         <td>
-          <a href="/investors/<%= investor.id %>">
+          <a href="/managers/<%= manager.id %>">
             Show details
           </a>
         </td>

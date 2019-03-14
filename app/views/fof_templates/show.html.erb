@@ -50,23 +50,82 @@
         User
       </dt>
       <dd>
-        <%= @fof.user_id %>
+        <%= @fof.user.email %>
       </dd>
 
-      <dt>
-        Created at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@fof.created_at) %> ago
-      </dd>
-
-      <dt>
-        Updated at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@fof.updated_at) %> ago
-      </dd>
+     
+  <dt>
+  Number of options
+  </dt>
+  <dd>
+    <%= Option.where(fof_id: @fof.id).count %>
+  </dd>
+     
     </dl>
   </div>
 </div>
 
+
+
+
+<div class="card mt-4">
+  <div class="card-header">
+    Pool
+  </div>
+  <ul class="list-group list-group-flush">
+   <% Option.where(fof_id: @fof.id).each do |option| %>
+    <li class="list-group-item">
+      <a href="/options/<%= option.id %>">
+        <%= Fund.find(option.fund_id).name %>
+      </a>
+      ($ <%= option.amount/1000000 %> million)
+      </li>
+   <% end %>
+  </ul>
+  
+  <div class="card-header">
+   Add a new option for this fof
+  </div>
+
+<ul class="list-group">
+  <li class="list-group-item">
+      
+<form action="/create_option" method="post">
+
+
+ <!-- Label and input for fof id -->
+  <input type="hidden" name="fof_id" value="<%= @fof.id %>">
+
+  <div class="form-group">
+    <label for="fund_id">
+      Fund
+    </label>
+    <%= select_tag("fund_id", options_from_collection_for_select(Fund.all, :id, :name, @option.try(:fund_id)), :class => "form-control") %>
+    or <a href="/funds/new">add a new fund</a> first 
+    
+  </div>
+
+  <div class="form-group">
+    <label for="amount">
+      Amount
+    </label>
+
+    <input type="text" id="amount" name="amount" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="timing">
+      Timing
+    </label>
+
+    <input type="text" id="timing" name="timing" class="form-control">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create option
+  </button>
+  
+</form>
+
+  </li>
+</ul>

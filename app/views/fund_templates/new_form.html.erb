@@ -43,8 +43,9 @@
     <label for="manager_id">
       Manager
     </label>
-
-    <input type="text" id="manager_id" name="manager_id" class="form-control">
+    
+    <%= select_tag("manager_id", options_from_collection_for_select(Manager.all, :id, :name, @fund.try(:manager_id)), :class => "form-control") %>
+    or <a href="/managers/new">add a new manager</a> first 
   </div>
 
 

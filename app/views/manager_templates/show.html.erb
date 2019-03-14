@@ -1,25 +1,25 @@
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <h1>
-      Investor #<%= @investor.id %> details
+      manager #<%= @manager.id %> details
     </h1>
 
     <div class="row mb-3">
       <div class="col">
-        <a href="/investors" class="btn btn-block btn-outline-secondary">
+        <a href="/managers" class="btn btn-block btn-outline-secondary">
           Go back
         </a>
       </div>
 
       <div class="col">
-        <a href="/investors/<%= @investor.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit investor
+        <a href="/managers/<%= @manager.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit manager
         </a>
       </div>
 
       <div class="col">
-        <a href="/delete_investor/<%= @investor.id %>" class="btn btn-block btn-outline-secondary">
-          Delete investor
+        <a href="/delete_manager/<%= @manager.id %>" class="btn btn-block btn-outline-secondary">
+          Delete manager
         </a>
       </div>
     </div>
@@ -29,42 +29,42 @@
         Name
       </dt>
       <dd>
-        <%= @investor.name %>
+        <%= @manager.name %>
       </dd>
 
       <dt>
         Dob
       </dt>
       <dd>
-        <%= @investor.dob %>
+        <%= @manager.dob %>
       </dd>
 
       <dt>
         Image
       </dt>
       <dd>
-        <%= @investor.image %>
+        <%= @manager.image %>
       </dd>
 
       <dt>
         Bio
       </dt>
       <dd>
-        <%= @investor.bio %>
+        <%= @manager.bio %>
       </dd>
 
       <dt>
         Created at
       </dt>
       <dd>
-        <%= time_ago_in_words(@investor.created_at) %> ago
+        <%= time_ago_in_words(@manager.created_at) %> ago
       </dd>
 
       <dt>
         Updated at
       </dt>
       <dd>
-        <%= time_ago_in_words(@investor.updated_at) %> ago
+        <%= time_ago_in_words(@manager.updated_at) %> ago
       </dd>
     </dl>
   </div>

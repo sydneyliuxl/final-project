@@ -12,7 +12,8 @@
       Fund
     </label>
 
-    <input type="text" id="fund_id" name="fund_id" class="form-control">
+    <%= select_tag("fund_id", options_from_collection_for_select(Fund.all, :id, :name, @investment.try(:fund_id)), :class => "form-control") %>
+    or <a href="/funds/new">add a new fund</a> first    
   </div>
 
   <div class="form-group">
@@ -20,7 +21,8 @@
       Project
     </label>
 
-    <input type="text" id="project_id" name="project_id" class="form-control">
+    <%= select_tag("project_id", options_from_collection_for_select(Project.all, :id, :name, @investment.try(:project_id)), :class => "form-control") %>
+    or <a href="/projects/new">add a new project</a> first  
   </div>
 
   <div class="form-group">

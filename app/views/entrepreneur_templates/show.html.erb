@@ -31,6 +31,14 @@
       <dd>
         <%= @entrepreneur.name %>
       </dd>
+      
+      <dt>
+        Image
+      </dt>
+      <dd>
+         <img src="<%=@entrepreneur.image %>"  width="300">
+      </dd>
+      
 
       <dt>
         Bio
@@ -59,6 +67,7 @@
       <dd>
         <%= time_ago_in_words(@entrepreneur.updated_at) %> ago
       </dd>
+      
     </dl>
   </div>
 </div>

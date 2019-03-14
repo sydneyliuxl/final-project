@@ -38,14 +38,6 @@
         </th>
 
         <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
-        </th>
-
-        <th>
         </th>
       </tr>
 
@@ -56,26 +48,23 @@
         </td>
 
         <td>
-          <%= investment.fund_id %>
+         <a href="/funds/<%= investment.fund_id %>">
+          <%= investment.fund.name %>
+         </a>
         </td>
 
         <td>
-          <%= investment.project_id %>
+         <a href="/projects/<%= investment.project_id %>">
+          <%= investment.project.name %>
+         </a>         
         </td>
 
         <td>
-          <%= investment.amount %>
+          $<%= investment.amount/1000000 %>million
         </td>
 
         <td>
           <%= investment.round %>
-        </td>
-
-        <td>
-          <%= time_ago_in_words(investment.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(investment.updated_at) %> ago
         </td>
 
         <td>

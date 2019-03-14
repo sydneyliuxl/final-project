@@ -26,13 +26,17 @@
         </th>
 
         <th>
-          Bio
-        </th>
-
-        <th>
           Image
         </th>
 
+        <th>
+          dob
+        </th>
+
+        <th>
+          Bio
+        </th>
+        
         <th>
           Created at
         </th>
@@ -56,13 +60,16 @@
         </td>
 
         <td>
-          <%= entrepreneur.bio %>
+          <img src="<%=entrepreneur.image %>" width="80">
         </td>
 
         <td>
           <%= entrepreneur.dob %>
         </td>
 
+        <td>
+          <%= entrepreneur.bio %>
+        </td>
         <td>
           <%= time_ago_in_words(entrepreneur.created_at) %> ago
         </td>

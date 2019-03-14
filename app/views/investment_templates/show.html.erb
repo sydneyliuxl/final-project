@@ -29,21 +29,25 @@
         Fund
       </dt>
       <dd>
-        <%= @investment.fund_id %>
+         <a href="/funds/<%= @investment.fund_id %>">
+          <%= @investment.fund.name %>
+         </a>
       </dd>
 
       <dt>
         Project
       </dt>
       <dd>
-        <%= @investment.project_id %>
+         <a href="/projects/<%= @investment.project_id %>">
+          <%= @investment.project.name %>
+         </a>  
       </dd>
 
       <dt>
         Amount
       </dt>
       <dd>
-        <%= @investment.amount %>
+        $ <%= @investment.amount/1000000 %> million
       </dd>
 
       <dt>

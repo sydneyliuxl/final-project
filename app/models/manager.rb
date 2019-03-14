@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: investors
+# Table name: managers
 #
 #  id         :integer          not null, primary key
 #  name       :string
@@ -11,6 +11,6 @@
 #  updated_at :datetime         not null
 #
 
-class Investor < ApplicationRecord
+class Manager < ApplicationRecord
   has_many :funds, :foreign_key => "manager_id"
 end

@@ -4,7 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  name       :string
-#  duration   :time
+#  duration   :string
 #  field      :string
 #  stage      :string
 #  manager_id :integer
@@ -13,7 +13,7 @@
 #
 
 class Fund < ApplicationRecord
-  belongs_to :manager, :class_name => "Investor"
+  belongs_to :manager, :class_name => "Manager"
   has_many :investments
   has_many :projects, :through => :investments, :source => :project
   
