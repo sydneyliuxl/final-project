@@ -17,9 +17,6 @@
   <div class="col-md-12">
     <table class="table">
       <tr>
-        <th>
-          ID
-        </th>
 
         <th>
           Name
@@ -37,13 +34,7 @@
           Bio
         </th>
 
-        <th>
-          Created at
-        </th>
 
-        <th>
-          Updated at
-        </th>
 
         <th>
         </th>
@@ -51,9 +42,6 @@
 
       <% @managers.each do |manager| %>
       <tr>
-        <td>
-          <%= manager.id %>
-        </td>
 
         <td>
           <%= manager.name %>
@@ -71,12 +59,7 @@
           <%= manager.bio %>
         </td>
 
-        <td>
-          <%= time_ago_in_words(manager.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(manager.updated_at) %> ago
-        </td>
+
 
         <td>
           <a href="/managers/<%= manager.id %>">

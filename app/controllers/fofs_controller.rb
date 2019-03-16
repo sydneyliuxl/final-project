@@ -5,6 +5,19 @@ class FofsController < ApplicationController
     render("fof_templates/index.html.erb")
   end
 
+  def my_fofs
+  
+    @fofs = current_user.fofs
+
+    render("fof_templates/index.html.erb")
+  end
+
+
+
+
+
+
+
   def show
     @fof = Fof.find(params.fetch("id_to_display"))
 

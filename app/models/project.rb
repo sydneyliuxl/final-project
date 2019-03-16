@@ -15,6 +15,8 @@
 class Project < ApplicationRecord
   
   has_many :investments, :dependent => :destroy
-  belongs_to :entrepreneur
+  belongs_to :entrepreneur, :class_name => "Entrepreneur"
+  
+  
   has_many :funds, :through => :investments, :source => :fund
 end

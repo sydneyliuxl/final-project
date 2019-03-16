@@ -12,5 +12,6 @@
 #
 
 class Entrepreneur < ApplicationRecord
-  has_many :projects
+
+  has_many :projects, :foreign_key => "entrepreneur_id"
 end

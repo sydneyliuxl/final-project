@@ -68,17 +68,22 @@
   <dd>
     <%= Investment.where(fund_id: @fund.id).count %>
   </dd>
-  
+
+  <dt>
+  Total amount
+  </dt>
+  <dd>
+   $ <%= @fund.investments.pluck(:amount).sum/1000000 %> million
+  </dd> 
   
 
     </dl>
   </div>
 </div>
 
-
-
-
-<div class="card mt-4">
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+  <div class="card mt-4">
   <div class="card-header">
     Portfolio
   </div>
@@ -138,3 +143,8 @@
 
   </li>
 </ul>
+</div>
+</div>
+</div>
+
+

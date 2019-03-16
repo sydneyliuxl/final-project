@@ -1,6 +1,6 @@
 class OptionsController < ApplicationController
   def index
-    @options = Option.all
+    @options = Option.all.order(:fof_id)
 
     render("option_templates/index.html.erb")
   end
@@ -23,7 +23,7 @@ class OptionsController < ApplicationController
     @option.fof_id = params.fetch("fof_id")
     @option.fund_id = params.fetch("fund_id")
     @option.amount = params.fetch("amount")
-    @option.timing = params.fetch("timing")
+    @option.timing = Chronic.parse(params.fetch("timing"))
 
     if @option.valid?
       @option.save

@@ -1,6 +1,6 @@
 class InvestmentsController < ApplicationController
   def index
-    @investments = Investment.all
+    @investments = Investment.all.order(:fund_id)
 
     render("investment_templates/index.html.erb")
   end

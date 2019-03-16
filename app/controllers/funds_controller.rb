@@ -29,7 +29,7 @@ class FundsController < ApplicationController
     if @fund.valid?
       @fund.save
 
-      redirect_back(:fallback_location => "/funds", :notice => "Fund created successfully.")
+      redirect_to( "/funds", :notice => "Fund created successfully.")
     else
       render("fund_templates/new_form_with_errors.html.erb")
     end

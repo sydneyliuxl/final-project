@@ -10,7 +10,7 @@
           Go back
         </a>
       </div>
-
+    <% if @fof.user_id == current_user.id %>
       <div class="col">
         <a href="/fofs/<%= @fof.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit fof
@@ -22,7 +22,9 @@
           Delete fof
         </a>
       </div>
+    <% end %>     
     </div>
+
 
     <dl>
       <dt>
@@ -60,13 +62,21 @@
   <dd>
     <%= Option.where(fof_id: @fof.id).count %>
   </dd>
-     
+
+  <dt>
+  Total amount
+  </dt>
+  <dd>
+   $ <%= @fof.options.pluck(:amount).sum/1000000 %> million
+  </dd>
+
     </dl>
   </div>
 </div>
 
 
-
+<div class="row">
+  <div class="col-md-8 offset-md-2">
 
 <div class="card mt-4">
   <div class="card-header">
@@ -129,3 +139,7 @@
 
   </li>
 </ul>
+
+</div>
+</div>
+</div>

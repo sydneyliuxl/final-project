@@ -12,6 +12,9 @@
 #
 
 class Investment < ApplicationRecord
-  belongs_to :project
   belongs_to :fund
+  belongs_to :project
+
 end
+
+

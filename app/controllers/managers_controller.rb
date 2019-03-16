@@ -41,10 +41,10 @@ class ManagersController < ApplicationController
   end
 
   def update_row
-    @investor = Manager.find(params.fetch("id_to_modify"))
+    @manager = Manager.find(params.fetch("id_to_modify"))
 
     @manager.name = params.fetch("name")
-    @manager.dob = params.fetch("dob")
+    @manager.dob = Chronic.parse(params.fetch("dob"))
     @manager.image = params.fetch("image")
     @manager.bio = params.fetch("bio")
 

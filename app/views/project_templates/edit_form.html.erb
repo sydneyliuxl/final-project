@@ -18,8 +18,8 @@
     <label for="entrepreneur_id">
       Entrepreneur
     </label>
-
-    <input type="text" id="entrepreneur_id" name="entrepreneur_id" class="form-control" value="<%= @project.entrepreneur_id %>">
+    <%= select_tag("entrepreneur_id", options_from_collection_for_select(Entrepreneur.all, :id, :name, @project.try(:entrepreneur_id)), :class => "form-control") %>
+    or <a href="/entrepreneurs/new">add a new entrepreneur</a> first
   </div>
 
   <div class="form-group">

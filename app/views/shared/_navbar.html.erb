@@ -10,33 +10,42 @@
 
     <div class="collapse navbar-collapse" id="collapsible-nav-links">
       <ul class="navbar-nav mr-auto">
+        
+        <li class="nav-item"><a class="nav-link" href="/fofs">Fofs</a></li>        
+        <li class="nav-item"><a class="nav-link" href="/my_fofs">My Fofs</a></li>           
+        <li class="nav-item"><a class="nav-link" href="/funds">Funds</a></li>        
+        <li class="nav-item"><a class="nav-link" href="/managers">Managers</a></li>          
+        <li class="nav-item"><a class="nav-link" href="/projects">Projects</a></li>   
+        <li class="nav-item"><a class="nav-link" href="/entrepreneurs">Entrepreneurs</a></li>   
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Resources
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a href="/options" class="dropdown-item">
+              Option of Fofs
+            </a>
             <a href="/investments" class="dropdown-item">
-              Investments
+              Investment of Funds
             </a>
-            <a href="/funds" class="dropdown-item">
-              Funds
-            </a>
-            <a href="/fofs" class="dropdown-item">
-              Fofs
-            </a>
-            <a href="/entrepreneurs" class="dropdown-item">
-              Entrepreneurs
-            </a>
-            <a href="/investors" class="dropdown-item">
-              Investors
-            </a>
-            <a href="/projects" class="dropdown-item">
-              Projects
-            </a>
-            
-            
           </div>
-        </li>
+        </li>        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
       </ul>
       <ul class="navbar-nav">
         <% if current_user.blank? %>

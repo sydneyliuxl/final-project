@@ -76,6 +76,14 @@ Rails.application.routes.draw do
   # DELETE
   get("/delete_fof/:id_to_remove", { :controller => "fofs", :action => "destroy_row" })
 
+  # MY_FOFS
+  get("/my_fofs", { :controller => "fofs", :action => "my_fofs" })
+
+
+
+
+
+
   #------------------------------
 
   # Routes for the Entrepreneur resource:
@@ -139,8 +147,6 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
-
- 
   
   
 end

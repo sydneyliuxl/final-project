@@ -17,9 +17,6 @@
   <div class="col-md-12">
     <table class="table">
       <tr>
-        <th>
-          ID
-        </th>
 
         <th>
           Fund
@@ -43,9 +40,6 @@
 
       <% @investments.each do |investment| %>
       <tr>
-        <td>
-          <%= investment.id %>
-        </td>
 
         <td>
          <a href="/funds/<%= investment.fund_id %>">
