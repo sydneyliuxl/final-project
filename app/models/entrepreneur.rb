@@ -14,4 +14,5 @@
 class Entrepreneur < ApplicationRecord
 
   has_many :projects, :foreign_key => "entrepreneur_id"
+  validates :name, uniqueness: true
 end

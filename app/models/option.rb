@@ -12,6 +12,8 @@
 #
 
 class Option < ApplicationRecord
+
   belongs_to :fof
   belongs_to :fund
+  validates :amount, :timing, presence: true
 end

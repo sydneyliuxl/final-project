@@ -12,7 +12,7 @@
       Fof
     </label>
     
-    <%= select_tag("fof_id", options_from_collection_for_select(Fof.all, :id, :name, @option.try(:fof_id)), :class => "form-control") %>
+    <%= select_tag("fof_id", options_from_collection_for_select(current_user.fofs, :id, :name, @option.try(:fof_id)), :class => "form-control") %>
     or <a href="/fofs/new">add a new fof</a> first 
     
   </div>
@@ -40,6 +40,9 @@
     </label>
     <input type="text" id="timing" name="timing" class="form-control">
   </div>
+
+<!-- Label and input for fof user_id -->
+  <input type="hidden" name="user_id" value="<%= current_user.id %>">
 
   <button class="btn btn-block btn-outline-secondary">
     Create option

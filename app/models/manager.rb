@@ -13,4 +13,5 @@
 
 class Manager < ApplicationRecord
   has_many :funds, :foreign_key => "manager_id"
+  validates :name, uniqueness: true
 end

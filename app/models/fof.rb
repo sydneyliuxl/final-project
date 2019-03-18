@@ -16,4 +16,7 @@ class Fof < ApplicationRecord
   
   has_many :options
   has_many :funds, :through => :options, :source => :fund
+  
+  validates :name, :scale, :expiration, presence: true
+  
 end

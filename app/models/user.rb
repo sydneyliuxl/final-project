@@ -32,4 +32,5 @@ class User < ApplicationRecord
   
   has_many :fofs
 
+ 
 end

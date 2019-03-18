@@ -25,6 +25,7 @@ class OptionsController < ApplicationController
     @option.amount = params.fetch("amount")
     @option.timing = Chronic.parse(params.fetch("timing"))
 
+
     if @option.valid?
       @option.save
 
@@ -48,6 +49,7 @@ class OptionsController < ApplicationController
     @option.amount = params.fetch("amount")
     @option.timing = params.fetch("timing")
 
+    
     if @option.valid?
       @option.save
 

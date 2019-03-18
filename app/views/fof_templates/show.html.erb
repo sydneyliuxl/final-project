@@ -92,7 +92,10 @@
       </li>
    <% end %>
   </ul>
-  
+
+
+
+ <% if @fof.user_id == current_user.id %>  
   <div class="card-header">
    Add a new option for this fof
   </div>
@@ -139,6 +142,8 @@
 
   </li>
 </ul>
+
+<% end %>
 
 </div>
 </div>

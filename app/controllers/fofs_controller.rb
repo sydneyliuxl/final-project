@@ -15,9 +15,6 @@ class FofsController < ApplicationController
 
 
 
-
-
-
   def show
     @fof = Fof.find(params.fetch("id_to_display"))
 
