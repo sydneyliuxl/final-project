@@ -23,6 +23,10 @@
         </th>
 
         <th>
+          Scale
+        </th>
+        
+        <th>
           Duration
         </th>
 
@@ -50,6 +54,11 @@
         <td>
           <%= fund.name %>
         </td>
+
+        <td>
+          $ <%= fund.investments.pluck(:amount).sum/1000000 %> million
+        </td>
+
 
         <td>
           <%= fund.duration %>
