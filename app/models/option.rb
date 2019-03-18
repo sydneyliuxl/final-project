@@ -14,5 +14,8 @@
 class Option < ApplicationRecord
   belongs_to :fof
   belongs_to :fund
+  
+  has_one :user, :through => :fof, :source => :user
+  
   validates :amount, :timing, presence: true
 end

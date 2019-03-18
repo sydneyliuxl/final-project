@@ -31,6 +31,6 @@ class User < ApplicationRecord
          
   
   has_many :fofs
-
+  has_many :options, :through => :fofs
  
 end
